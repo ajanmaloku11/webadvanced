@@ -1,0 +1,421 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#000;
+    color:white;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:rgba(0,0,0,.5);
+    backdrop-filter:blur(10px);
+    z-index:100;
+}
+
+.logo{
+    font-size:28px;
+    color:#ff2800;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff2800;
+}
+
+/* HERO */
+
+header{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.5),
+    rgba(0,0,0,.6)),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    animation:fadeIn 2s ease;
+}
+
+.hero h1{
+    font-size:5rem;
+    text-transform:uppercase;
+    letter-spacing:5px;
+}
+
+.hero p{
+    margin:20px;
+    font-size:1.2rem;
+}
+
+.hero button{
+    padding:15px 40px;
+    border:none;
+    background:#ff2800;
+    color:white;
+    cursor:pointer;
+    border-radius:30px;
+    transition:.4s;
+}
+
+.hero button:hover{
+    transform:translateY(-5px);
+    background:white;
+    color:black;
+}
+
+/* CARDS */
+
+.cards{
+    padding:100px 50px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#111;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    transition:.5s;
+}
+
+.card:hover{
+    transform:translateY(-15px);
+    box-shadow:0 0 20px #ff2800;
+}
+
+.card h2{
+    color:#ff2800;
+    margin-bottom:15px;
+}
+
+/* TABLE */
+
+#specs{
+    padding:100px 10%;
+}
+
+#specs h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#ff2800;
+}
+
+th,td{
+    padding:20px;
+    border:1px solid #444;
+}
+
+tr{
+    transition:.3s;
+}
+
+tr:hover{
+    background:#222;
+}
+
+/* GALLERY */
+
+.gallery{
+    padding:100px 50px;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.box{
+    flex:1;
+    min-width:250px;
+    height:250px;
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+    transition:.5s;
+}
+
+.box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.box:hover img{
+    transform:scale(1.1);
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:80px;
+    background:#111;
+}
+
+/* CONTACT FORM */
+
+.contact{
+    padding:100px 10%;
+    text-align:center;
+    background:#000;
+}
+
+.contact h2{
+    margin-bottom:30px;
+}
+
+.contact form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    max-width:500px;
+    margin:auto;
+}
+
+.contact input,
+.contact textarea{
+    padding:15px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    background:#111;
+    color:white;
+}
+
+.contact textarea{
+    resize:none;
+    height:120px;
+}
+
+.contact button{
+    padding:15px;
+    border:none;
+    background:#ff2800;
+    color:white;
+    cursor:pointer;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.contact button:hover{
+    background:white;
+    color:black;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+}
+
+/* PAGE HERO */
+
+.page-hero{
+    height:100vh;
+    width:100%;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.65);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero-content form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    width:300px;
+    margin:auto;
+}
+
+.hero-content input,
+.hero-content textarea{
+    padding:12px;
+    border:none;
+    outline:none;
+    border-radius:8px;
+    background:#111;
+    color:white;
+}
+
+.hero-content button{
+    padding:12px;
+    border:none;
+    background:#ff2800;
+    color:white;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+/* SPLIT LAYOUT */
+
+.split-section{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:60px;
+    gap:40px;
+}
+
+.split-text{
+    flex:1;
+    color:white;
+}
+
+.split-text h1,
+.split-text h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.split-text p{
+    font-size:1.2rem;
+    color:#ccc;
+    margin-bottom:20px;
+}
+
+.split-image{
+    flex:1;
+}
+
+.split-image img{
+    width:100%;
+    border-radius:20px;
+    object-fit:cover;
+    box-shadow:0 0 30px rgba(255,40,0,0.3);
+}
+
+/* 🔥 FIXED MODELS CARDS (THIS IS THE UPDATE YOU WANTED) */
+
+.model-card{
+    background:#111;
+    padding:20px;
+    margin:20px auto;
+    border-radius:12px;
+    max-width:700px;
+    text-align:center;
+    transition:.3s;
+}
+
+.model-card:hover{
+    transform:scale(1.02);
+}
+
+.model-card h2{
+    color:#ff2800;
+    margin-bottom:10px;
+}
+
+.model-card p{
+    color:#ccc;
+    margin-bottom:15px;
+}
+
+.model-card img{
+    width:45%;
+    display:block;
+    margin:10px auto 0;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.model-card img:hover{
+    transform:scale(1.05);
+}
+
+/* SPECS BOX */
+
+.spec-box{
+    background:#111;
+    padding:15px;
+    margin:10px auto;
+    max-width:400px;
+    border-radius:10px;
+}
